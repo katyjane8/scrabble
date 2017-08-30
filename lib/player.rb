@@ -1,4 +1,3 @@
-require "../lib/scrabble"
 
 class Player
   attr_reader :game

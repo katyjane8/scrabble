@@ -1,17 +1,10 @@
-require '../lib/player'
-
 class Scrabble
-  attr_reader :word
 
   def score(word)
-    @word = word
-    word = Scrabble.new("hello")
-    letters = word
-
-    total = 0
-    letters.each do |letter|
-      total += point_values[letter]
+    scores = word.chars.map do |letter|
+      point_values[letter.upcase]
     end
+    scores.sum
   end
 
   def point_values
@@ -25,5 +18,4 @@ class Scrabble
       "Y"=>4, "Z"=>10
     }
   end
-  total
 end
